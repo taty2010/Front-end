@@ -3,7 +3,7 @@ import styled from "styled-components";
 import logo from "../img/cheftopia_logo.png";
 import { withFormik, Form, Field } from "formik";
 
-const Register = () => {
+function Register() {
   const Wrap = styled.div`
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
       url("https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
@@ -46,21 +46,22 @@ const Register = () => {
       </Block>
     </Wrap>
   );
-};
+}
 
-const FormikRegistrationForm = withFormik({
-  toValues(props) {
+const RegistrationForm = withFormik({
+  toValues({firstname, lastname, email,username,password}) {
     return {
-      firstname: props.firstname || "",
-      lastname: props.lastname || "",
-      email: props.email || "",
-      username: props.username || "",
-      password: props.password || ""
+      firstname: firstname || "",
+      lastname: lastname || "",
+      email: email || "",
+      username: username || "",
+      password: password || ""
     };
   },
+  
   handleSubmit(values) {
     console.log(values);
   }
 })(Register);
 
-export default FormikRegistrationForm;
+export default RegistrationForm;
