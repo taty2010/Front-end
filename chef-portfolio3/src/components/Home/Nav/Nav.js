@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Route, Link, NavLink } from "react-router-dom";
 
 const Nav = () => {
   const Nav = styled.h3`
@@ -10,11 +11,12 @@ const Nav = () => {
   `;
   return (
     <nav>
-      <Nav>Home</Nav>
-      <Nav>About Us</Nav>
-      <Nav>Recipes</Nav>
-      <Nav>Our Chef's</Nav>
-      <Nav>Sign In</Nav>
+      <NavLink to="/">Home</NavLink>
+        <NavLink to="/about">About Us</NavLink>
+        <NavLink to="/recipes">Recipes</NavLink>
+        <NavLink to="chefs">Our Chef's</NavLink>
+        <NavLink to="signin">Sign In</NavLink>
+        <NavLink to="/Register">Register</NavLink>
     </nav>
   );
 };
