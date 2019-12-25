@@ -11,7 +11,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-     <Scroll onscroll="Scroll()"/>
+      <Scroll/>
       <Route exact path="/" component={Home} />
       <Route path="/register" render={()=> {
         return <Registration />

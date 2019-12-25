@@ -15,7 +15,7 @@ const Cards = ({ images, index }) => {
     flex-flow: column;
     justify-content: center;
     align-content: center;
-    height: 90vh;
+    height: 95vh;
     width: 100%;
     transform: translateX(0px);
     transition: transform ease-out 0.45s;
