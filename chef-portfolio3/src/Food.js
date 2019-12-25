@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import main from "../src/components/img/main.jpg"
 
 export const Food = [
   {
@@ -46,6 +47,7 @@ export const Food = [
 ];
 
 export const Images = [
+  `${main}`,
   "https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
   "https://images.pexels.com/photos/704569/pexels-photo-704569.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
   "https://images.pexels.com/photos/1640772/pexels-photo-1640772.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",

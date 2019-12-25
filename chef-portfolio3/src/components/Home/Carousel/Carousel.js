@@ -14,7 +14,6 @@ const Carousel = () => {
   const Container = styled.div`
     width: 100%;
     margin: 0;
-    height: 500px;
     display: flex;
     flex-flow: row nowrap;
     overflow: hidden;

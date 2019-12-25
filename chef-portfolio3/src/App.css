@@ -55,12 +55,8 @@ svg {
 }
 
 nav a {
-  color: rgb(34, 32, 32);
   text-decoration: none;
-  font-size: 1rem;
-  /* margin: 0 1%; */
-  /* padding-right: 2%; */
-  /* border-right: 1px solid gray; */
+  font-size: 5vw;
 }
 
 nav a:link {
@@ -68,11 +64,11 @@ nav a:link {
   text-decoration: none;
   color: inherit;
   display: inline-block;
-  padding: calc(var(--spacing) / 2) var(--spacing);
+  padding: calc(1em / 2) 1em;
   position: relative;
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-size: 0.9rem;
+  font-size: 1.5vw;
 }
 
 nav a:active {
@@ -83,8 +79,8 @@ nav a:after {
   content: "";
   position: absolute;
   bottom: 0;
-  left: var(--spacing);
-  right: var(--spacing);
+  left: 1em;
+  right: 1em;
   height: 2px;
   background: currentColor;
   -webkit-transform: scaleX(0);
@@ -131,8 +127,9 @@ input {
 /* Kayans's work */
 
 h1 {
-  font-size: 200px;
-  opacity: 0.9;
+  font-size: 18vw;
+  opacity: 0.98;
+  font-family: "Lobster",cursive;
 }
 .Chefs-Recipes {
   font-size: 50px;
@@ -148,10 +145,8 @@ body {
   color: #f4f4f4;
   text-decoration: none;
 }
-nav {
-  --text: #f4f4f4;
-  --text-inverse: #333;
-  --background: transparent;
+.navTop {
+  background-color: transparent;
   top: 0;
   left: 0;
   right: 0;
@@ -160,6 +155,28 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 2em 3em;
+}
+
+.navTop a{
+  color: white;
+  font-weight: 800;
+}
+
+.navWhite{
+  color: #333;
+  background-color: white;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em 3em;
+}
+
+.navWhite a {
+  color: black;
 }
 .nav__list {
   list-style: none;
@@ -200,7 +217,7 @@ nav {
   box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
 }
 .header {
-  padding: 10vh 0;
+  /* padding: 10vh 0; */
   background-size: cover;
   background-blend-mode: multiply;
   color: white;
