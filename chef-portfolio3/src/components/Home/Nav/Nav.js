@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import styled from "styled-components";
 import { Route, Link, NavLink } from "react-router-dom";
 import { Motion, spring } from 'react-motion';
+import Register from "../../Register/Register"
 
 const Nav = () => {
 
@@ -21,7 +22,7 @@ const Nav = () => {
 const NavWhite = () => {
 
   return (
-    <Motion defaultStyle={{ left: -100 }} style={{ left: spring(10) }}>
+    <Motion defaultStyle={{ left: -100 }} style={{ left: spring(0) }}>
     {val => <nav className="navWhite" style={{ position: 'fixed', ...val }}>
         <NavLink to="/">Home</NavLink>
         <NavLink to="/about">About Us</NavLink>
@@ -45,6 +46,7 @@ function Scroll(){
  if (move > 70){
   return <NavWhite />
  }
+
  return <Nav/>
 }
 
