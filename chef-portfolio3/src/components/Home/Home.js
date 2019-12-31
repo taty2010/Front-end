@@ -1,13 +1,13 @@
 import React from "react";
 import Carousel from "../Home/Carousel/Carousel";
-import Recipes from "../Home/Body/Recipes";
-// import Footer from "./Footer/Footer";
+import Recipes from "./Body/Recipes";
+import Footer from "./Body/Footer";
 const Home = () => {
   return (
     <div>
       <Carousel />
       <Recipes />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };
