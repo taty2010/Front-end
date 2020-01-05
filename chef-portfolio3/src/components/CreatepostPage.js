@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 
-export const CreatepostPage = () => {
+const CreatepostPage = () => {
    
     const [recipe, setRecipe] = useState({
         title: '',
@@ -71,3 +71,5 @@ export const CreatepostPage = () => {
         </>
     );
 }
+
+export default CreatepostPage

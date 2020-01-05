@@ -12,8 +12,8 @@ const Nav = () => {
         <NavLink to="/about">About Us</NavLink>
         <NavLink to="/recipes">Recipes</NavLink>
         <NavLink to="chefs">Our Chef's</NavLink>
-        <NavLink className="btn" to="signin">Sign In</NavLink>
-        <NavLink className="btn nav__link--btn--highlight active" to="/Register">Register</NavLink>
+        <NavLink className="btn" to="signin">Sign Out</NavLink>
+        <NavLink className="btn nav__link--btn--highlight active" to="/userlogin/post">Post</NavLink>
     </nav>
   );
 };
@@ -28,8 +28,8 @@ const NavWhite = () => {
         <NavLink to="/about">About Us</NavLink>
         <NavLink to="/recipes">Recipes</NavLink>
         <NavLink to="chefs">Our Chef's</NavLink>
-        <NavLink className="btn" to="signin">Sign In</NavLink>
-        <NavLink className="btn nav__link--btn--highlight active" to="/Register">Register</NavLink>
+        <NavLink className="btn" to="signin">Sign Out</NavLink>
+        <NavLink className="btn nav__link--btn--highlight active" to="/userlogin/post">Post</NavLink>
     </nav>}
     </Motion>
   );

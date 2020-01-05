@@ -4,7 +4,8 @@ import {CreatepostPage} from './components/CreatepostPage';
 import Home from "./components/Home/Home";
 import Scroll from "./components/Home/Nav/Nav";
 import Registration from "./components/Register/Register.js";
-import Recipes from "./components/RecipePage/RecipePage"
+import Recipes from "./components/RecipePage/RecipePage";
+import Post from "./components/CreatepostPage"
 import { Switch, Route, Link } from "react-router-dom";
 
 import './App.css';
@@ -20,6 +21,9 @@ function App() {
       <Route path="/register" render={()=> {
         return <Registration />
       }} />
+      <Route path="/userlogin/post" render={()=>{
+        return <Post />
+      }}/>
     </div>
   );
 }
