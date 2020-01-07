@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 const Cards = ({ images, index }) => {
-  const [translate, setTranslate] = useState("");
 
   const Card = styled.div`
     background-image: url(${images[index]});
@@ -17,8 +16,6 @@ const Cards = ({ images, index }) => {
     align-content: center;
     height: 95vh;
     width: 100%;
-    transform: translateX(0px);
-    transition: transform ease-out 0.45s;
     color: white;
   `;
 
