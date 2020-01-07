@@ -6,6 +6,9 @@
   background-color: white;
 }
 
+h2{
+  font-family: "Lobster",cursive;
+}
 nav {
   display: flex;
   /* height: 100px; */
