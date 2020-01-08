@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import logo from '../../img/user.jpg'
+import logo from '../../img/user.jpg';
+import { Route, Link, NavLink } from "react-router-dom";
 
 const ChefCards = () => {
 
@@ -48,6 +49,7 @@ const ChefCards = () => {
     return(
       <Wrapper>
         <h2>Checkout Our New Users!</h2>
+        <Link to='/user/1'>
         <Chef>
           <Img></Img>
           <InfoWrap>
@@ -57,6 +59,7 @@ const ChefCards = () => {
               crimson and a touch of Prussian blue Just relax and let it flow. That easy.</p>
           </InfoWrap>
         </Chef>
+        </Link>
       </Wrapper>
     )
   }

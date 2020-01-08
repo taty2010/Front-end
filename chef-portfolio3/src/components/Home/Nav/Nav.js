@@ -11,7 +11,7 @@ const Nav = () => {
         <NavLink to="/">Home</NavLink>
         <NavLink to="/about">About Us</NavLink>
         <NavLink to="/recipes">Recipes</NavLink>
-        <NavLink to="chefs">Our Chef's</NavLink>
+        <NavLink to="/our-chefs">Our Chefs</NavLink>
         <NavLink className="btn" to="signin">Sign Out</NavLink>
         <NavLink className="btn nav__link--btn--highlight active" to="/userlogin/post">Post</NavLink>
     </nav>
@@ -27,7 +27,7 @@ const NavWhite = () => {
         <NavLink to="/">Home</NavLink>
         <NavLink to="/about">About Us</NavLink>
         <NavLink to="/recipes">Recipes</NavLink>
-        <NavLink to="chefs">Our Chef's</NavLink>
+        <NavLink to="/our-chefs">Our Chef's</NavLink>
         <NavLink className="btn" to="signin">Sign Out</NavLink>
         <NavLink className="btn nav__link--btn--highlight active" to="/userlogin/post">Post</NavLink>
     </nav>}

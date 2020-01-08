@@ -3,7 +3,7 @@ import Carousel from "../Home/Carousel/Carousel";
 import Recipes from "./Body/Recipes";
 import Footer from "./Body/Footer";
 import Chefs from "./Carousel/ChefCards"
-const Home = () => {
+const OurChefs = () => {
   return (
     <div>
       <Carousel />
@@ -14,4 +14,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default OurChefs;

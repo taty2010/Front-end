@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import logo from "../../img/cheftopia_logo.png"
 
 const Cards = ({ images, index }) => {
 
@@ -14,7 +15,7 @@ const Cards = ({ images, index }) => {
     flex-flow: column;
     justify-content: center;
     align-content: center;
-    height: 95vh;
+    height: 80vh;
     width: 100%;
     color: white;
   `;
@@ -23,7 +24,7 @@ const Cards = ({ images, index }) => {
 
   return (
     <Card>
-      <h1 className="text">ChefTopia</h1>
+       <h1 className="text">Our Chefs</h1> 
       {/* <Img src={images} alt="food"></Img> */}
       {/* <h2>{food.title}</h2>
       <p>{food.description}</p> */}
