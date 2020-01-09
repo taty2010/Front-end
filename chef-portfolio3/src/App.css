@@ -6,6 +6,9 @@
   background-color: white;
 }
 
+h2{
+  font-family: "Lobster",cursive;
+}
 nav {
   display: flex;
   /* height: 100px; */
@@ -26,16 +29,15 @@ svg {
   color: #505052;
 }
 
-/* .text {
-  color: black;
-  mix-blend-mode: lighten;
-  background-color: rgb(255, 255, 255);
+ .text {
+  color: white;
+  /* mix-blend-mode: lighten; */
+  background-color: rgba(62, 44, 44, 0.71);
   border-radius: 25px;
-  font-size: 7rem;
   width: 80%;
-  padding: 5% 0;
+  padding: 1% 0;
   margin: 0 auto;
-} */
+} 
 
 .header {
   display: flex;
@@ -127,8 +129,8 @@ input {
 
 /* Kayans's work */
 
-h1 {
-  font-size: 18vw;
+.text {
+  font-size: 12vw;
   opacity: 0.98;
   font-family: "Lobster",cursive;
 }
