@@ -3,9 +3,10 @@ import styled from "styled-components";
 import logo from "../img/cheftopia_logo.png";
 import { withFormik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import axios from "axios"
 import registerbg from "../img/registerbg.jpg"
 
-function Register({values, errors, touched, status}) {
+function Register({values, errors, touched, status, isSubmitting}) {
 
   console.log("values", values);
   console.log("errors", errors);
@@ -27,49 +28,37 @@ function Register({values, errors, touched, status}) {
           <img src={logo} alt="chef topia logo" width="100" height="100" />
           <h2>Registration Form</h2>
         </div>
-          <Field type="text" name="firstname" placeholder="First Name" />
-          <Field type="text" name="lastname" placeholder="Last Name" />
-          <div>
-            {touched.email && errors.email && (<p>{errors.email}</p>)}
-              <Field type="email" name="email" placeholder="Email" />
-
-          </div>
+          <Field type="text" name="location" placeholder="Location" />
           <Field type="text" name="username" placeholder="Username" />
-          <div>
-          {touched.password && errors.password && (<p>{errors.password}</p>)}
+         
           <Field type="password" name="password" placeholder="Password" />
-          </div>
-          <button type="submit" disabled="isSubmitting" className="registerSubmit">Submit</button>
+         
+          <button type="submit" className="registerSubmit">Submit</button>
         </Form>
     </div>
   );
 }
 
 const RegistrationForm = withFormik({
-  toValues({firstname, lastname, email,username,password}) {
+  mapPropsToValues({city, name, password}) {
     return {
-      firstname: firstname || "",
-      lastname: lastname || "",
-      email: email || "",
-      username: username || "",
+      username: name || "",
+      location: city || "",
       password: password || ""
     };
   },
-
-  // Validation
-  validationSchema: Yup.object().shape(
-    {
-      email: Yup.string()
-        .email("Email not valid")
-        .required("Email is required"),
-      password: Yup.string()
-        .min(6, "Password must be 6 characters or longer")
-        .required("Password is required")
-    }
-  ),
   
-  handleSubmit(values) {
-    console.log(values);
+  handleSubmit(values, {setStatus, resetForm}) {
+    console.log("Submitting",values);
+    axios.post("https://chef-portfolio-done-right.herokuapp.com/api/auth/register", values)
+      .then(res => {
+          console.log("success", res)
+          setStatus(res.data);
+          resetForm();
+      })
+      .catch(err => {
+        console.log(err.response)
+      })
   }
 })(Register);
 

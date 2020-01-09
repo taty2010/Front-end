@@ -8,7 +8,7 @@ const OurChefs = () => {
     <div>
       <Carousel />
       <Chefs />
-      <Recipes />
+      {/* <Recipes /> */}
       <Footer />
     </div>
   );
