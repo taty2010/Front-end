@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import { Food } from "../../../Food";
 import RecipeBlock from "./RecipeBlock";
 
-const Recipes = () => {
+const Recipes = ({recipe}) => {
   return (
     <div className="recipeContainer">
-      {Food.map(list => (
-        <RecipeBlock key={list.image} recipe={list} />
+      {recipe.map(list => (
+        <RecipeBlock key={list.id} recipe={list} />
       ))}
     </div>
   );
