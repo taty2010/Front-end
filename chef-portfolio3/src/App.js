@@ -48,7 +48,7 @@ function App() {
         return <Registration />
       }} />
       <Route path="/userlogin/post" render={()=>{
-        return <Post />
+        return <Registration />
       }}/>
       <Route path="/user/1" render={()=>{
         return <Portfolio />
