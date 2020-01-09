@@ -5,7 +5,7 @@ import { withFormik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import registerbg from "../img/registerbg.jpg"
 
-function Register({values, errors, touched, status}) {
+ function Register({values, errors, touched, status}) {
 
   console.log("values", values);
   console.log("errors", errors);
@@ -32,12 +32,18 @@ function Register({values, errors, touched, status}) {
           <div>
             {touched.email && errors.email && (<p>{errors.email}</p>)}
               <Field type="email" name="email" placeholder="Email" />
-
           </div>
-          <Field type="text" name="username" placeholder="Username" />
           <div>
-          {touched.password && errors.password && (<p>{errors.password}</p>)}
-          <Field type="password" name="password" placeholder="Password" />
+            {/* {touched.username && errors.username && (<p>{errors.username}</p>)} */}
+            <Field type="text" name="username" placeholder="Username" />
+          </div>
+          <div>
+            {/* {touched.password && errors.password && (<p>{errors.password}</p>)} */}
+            <Field type="password" name="password" placeholder="Password" />
+          </div>
+          <div>
+            <Field type="text" name="location" placeholder="Location" />
+            {/* {touched.location && errors.location && (<p>{errors.location}</p>)} */}
           </div>
           <button type="submit" disabled="isSubmitting" className="registerSubmit">Submit</button>
         </Form>
@@ -46,13 +52,14 @@ function Register({values, errors, touched, status}) {
 }
 
 const RegistrationForm = withFormik({
-  toValues({firstname, lastname, email,username,password}) {
+  toValues({firstname, lastname, email, username, password, location}) {
     return {
       firstname: firstname || "",
       lastname: lastname || "",
       email: email || "",
       username: username || "",
-      password: password || ""
+      password: password || "",
+      location: location || ""
     };
   },
 
