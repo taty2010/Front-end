@@ -61,7 +61,7 @@ function App() {
       <Route path="/userlogin/post" render={()=>{
         return <Registration />
       }}/>
-      <Route exact path="" component={HomePage}/>
+      <Route exact path="/" component={HomePage}/>
       <Route path="/recipes/:id" render={(props)=> {
         return <RecipePage {...props} user={api} recipe={list}/>
       }}/>
