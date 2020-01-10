@@ -11,6 +11,7 @@ import Portfolio from "./components/PortfolioPage";
 import RecipePage from "./components/RecipePage/RecipePage";
 import RecipeBlock from "./components/Home/Body/RecipeBlock"
 import data from "./Food";
+import HomePage from "./components/HomePage"
 import { Switch, Route, Link } from "react-router-dom";
 
 import './App.css';
@@ -60,7 +61,7 @@ function App() {
       <Route path="/userlogin/post" render={()=>{
         return <Registration />
       }}/>
-      {/* <Route path="/recipes/:id" component={RecipeBlock}/> */}
+      <Route exact path="" component={HomePage}/>
       <Route path="/recipes/:id" render={(props)=> {
         return <RecipePage {...props} user={api} recipe={list}/>
       }}/>
