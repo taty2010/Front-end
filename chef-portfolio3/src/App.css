@@ -29,6 +29,11 @@ svg {
   color: #505052;
 }
 
+.routeLink{
+  color: initial;
+  text-decoration: none;
+}
+
  .text {
   color: white;
   /* mix-blend-mode: lighten; */
@@ -43,18 +48,9 @@ svg {
   display: flex;
 }
 
-.recipeContainer {
-  width: 100%;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  margin-top: 5%;
-}
-
-.recipeBlock {
-  width: 30%;
-  margin: 0 autos;
-  padding: 2% 1%;
+.recipeUser{
+  font-size: 1vw;
+  line-height: 10px;
 }
 
 nav a {

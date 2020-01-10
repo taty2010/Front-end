@@ -9,6 +9,7 @@ import Recipes from "./components/Home/Body/Recipes";
 import Post from "./components/CreatepostPage";
 import Portfolio from "./components/PortfolioPage";
 import RecipePage from "./components/RecipePage/RecipePage";
+import RecipeBlock from "./components/Home/Body/RecipeBlock"
 import data from "./Food";
 import { Switch, Route, Link } from "react-router-dom";
 
@@ -19,40 +20,54 @@ function App() {
 
   const [list, getlist] = useState([]);
   const [recipe, setRecipe] = useState(data);
+  const [api, setApi] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("https://chef-portfolio-done-right.herokuapp.com/api/posts/all")
-      .then(response => {
-        getlist(response.data.concat(recipe));
-        console.log(response.data);
-      })
-      .catch(() => {
-        console.log("error");
-      });
+    async function fetchData(){
+    try{
+      const posts = await axios.get(`https://chef-portfolio-done-right.herokuapp.com/api/posts/all`);
+        getlist(posts.data.concat(recipe)); 
+    }catch(err) {
+        console.log(err);
+      }
+    try{
+      const users = await axios.get(`https://chef-portfolio-done-right.herokuapp.com/api/users/all`);
+          setApi(users.data); 
+          console.log(users.data)
+      }catch(err) {
+          console.log(err);
+        }
+    }
+    fetchData()
   }, [recipe]);
 
   console.log(list)
 
+
   return (
     <div className="App">
       <Scroll/>
-      <Route path="/our-chefs" component={Home} />
+      <Switch>
+      <Route path="/our-chefs" render={() =>{
+        return <Home user={api} />
+        }} />
       <Route exact path="/recipes" render={()=> {
         return <Recipes recipe={list}/>
       }} />
-      <Route path="/recipes/:id" render={(props)=> {
-        return <RecipePage {...props} recipe={list}/>
-      }}/>
       <Route path="/register" render={()=> {
         return <Registration />
       }} />
       <Route path="/userlogin/post" render={()=>{
         return <Registration />
       }}/>
-      <Route path="/user/1" render={()=>{
-        return <Portfolio />
+      {/* <Route path="/recipes/:id" component={RecipeBlock}/> */}
+      <Route path="/recipes/:id" render={(props)=> {
+        return <RecipePage {...props} user={api} recipe={list}/>
       }}/>
+      <Route path="/user/:id" render={(props)=>{
+        return <Portfolio {...props} user={api} recipe={list}/>
+      }}/>
+      </Switch>
     </div>
   );
 }

@@ -1,8 +1,40 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import headerImg from './img/profilebg.jpg';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMapMarkerAlt } from "@fortawesome/free-solid-svg-icons"; 
+import RecipeBlock from './Home/Body/RecipeBlock';
+import { Redirect, Route, Link} from "react-router-dom";
+import {Images} from '../Food';
 
-const PortfolioPage = () => {
+const PortfolioPage = ({user, match, recipe}) => {
+
+   
+    // let [rec, setRec] = useState([])
+    const paramUserId = match.params.id;
+    console.log(match.params)
+
+    const users = user.filter(list => {
+        return list.id === Number(paramUserId);
+    })[0];
+
+     const recipes = recipe.map(list =>{
+        if (list.user_id === Number(paramUserId)){
+            return list
+        };
+    });
+
+    const [index, currentIndex] = useState(
+        Math.floor(Math.random() * Math.floor(8))
+      );
+    
+      const [image, setImage] = useState(users.item_photo)
+      console.log(image)
+    
+        if(image === null || image === `http//google.com`){
+          console.log('hello')
+          setImage(Images[index]);
+        }
 
     const Wrapper = styled.div`
 
@@ -17,11 +49,22 @@ const PortfolioPage = () => {
         width: 95vw;
         margin: 2% auto;
         height: 65vh;
+        h1{
+            padding-top: 10%;
+            color:white;
+        }
+        h2{
+            color: pink;
+        }
+        svg{
+            padding: 0 1%;
+            color: white;
+        }
 
     `;
 
     const ProfileImg = styled.div`
-        background-image: url("https://images.unsplash.com/photo-1489089905289-5c91ae6e2544?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80");
+        background-image: url(${image});
         border-radius: 50%;
         background-position: center;
         background-repeat: no-repeat;
@@ -40,14 +83,27 @@ const PortfolioPage = () => {
     `;
 
     const Body = styled.div`
-        width: 85vw;
+        width: 45vw;
         margin: 0 auto;
+        line-height: 25px;
 
     `;
+
+    const UserRecipe = styled.div`
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        margin: 0 auto;
+
+
+    `
+
     return (
        <Wrapper>
            <Header>
                <ProfileImg></ProfileImg>
+               <h1>{users.username}</h1>
+                <h2><FontAwesomeIcon icon={faMapMarkerAlt} />{users.location}</h2>
            </Header>
            <h2>About</h2>
            <Body>
@@ -65,6 +121,16 @@ const PortfolioPage = () => {
                 Umber, and a little bit of Sap Green. Let your imagination just wonder around when you're doing these things.
             </p>
            </Body>
+           <UserRecipe>
+           {recipe.map(list =>{
+            if(list.user_id === Number(paramUserId)){
+
+                return (<RecipeBlock recipe={list}><Redirect to='recipes'/></RecipeBlock>)
+            }
+            })
+            } 
+            </UserRecipe>      
+       
        </Wrapper>
 
     );

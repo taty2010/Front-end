@@ -15,7 +15,7 @@ const Cards = ({ images, index }) => {
     flex-flow: column;
     justify-content: center;
     align-content: center;
-    height: 80vh;
+    height: 50vh;
     width: 100%;
     color: white;
   `;
@@ -24,7 +24,7 @@ const Cards = ({ images, index }) => {
 
   return (
     <Card>
-       <h1 className="text">Our Chefs</h1> 
+       {/* <h1 className="text">Our Chefs</h1>  */}
       {/* <Img src={images} alt="food"></Img> */}
       {/* <h2>{food.title}</h2>
       <p>{food.description}</p> */}

@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import {Link, Redirect} from "react-router-dom";
+import {Link} from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock } from "@fortawesome/free-solid-svg-icons"; 
 
-const RecipeBlock = ({ recipe }) => {
+const RecipeBlock2 = ({ recipe }) => {
 
   const RecipeBlock = styled.div`
     background-color: rgba(255,255,255,1);
@@ -51,8 +51,7 @@ const RecipeBlock = ({ recipe }) => {
   `;
 
 return (
-
-    <Link className="routeLink" to={`/recipes/${recipe.id}`}>
+    <Link className="routeLink" to={`recipes/${recipe.id}`}>
     <RecipeBlock>
       <Img><span role="img" aria-label={recipe.alt}></span></Img>
       <h2>{recipe.recipe_title}</h2>
@@ -62,8 +61,7 @@ return (
       </Time>
     </RecipeBlock>
     </Link>
-
   );
 };
 
-export default RecipeBlock;
+export default RecipeBlock2;
