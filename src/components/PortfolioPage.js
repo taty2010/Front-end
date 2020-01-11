@@ -48,7 +48,7 @@ const PortfolioPage = ({user, match, recipe}) => {
         background-size: cover;
         width: 95vw;
         margin: 2% auto;
-        height: 65vh;
+        height: 75vh;
         h1{
             padding-top: 10%;
             color:white;
