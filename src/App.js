@@ -9,7 +9,7 @@ import Recipes from "./components/Home/Body/Recipes";
 import Post from "./components/CreatepostPage";
 import Portfolio from "./components/PortfolioPage";
 import RecipePage from "./components/RecipePage/RecipePage";
-import RecipeBlock from "./components/Home/Body/RecipeBlock"
+import Login from "./components/LoginPage"
 import data from "./Food";
 import HomePage from "./components/HomePage"
 import { Switch, Route, Link } from "react-router-dom";
@@ -55,8 +55,8 @@ function App() {
       <Route exact path="/recipes" render={()=> {
         return <Recipes recipe={list}/>
       }} />
-      <Route path="/register" render={()=> {
-        return <Registration />
+      <Route path="/signin" render={()=> {
+        return <Login />
       }} />
       <Route path="/userlogin/post" render={()=>{
         return <Registration />

@@ -51,7 +51,7 @@ const ChefCards = ({user}) => {
       padding: 0 2%;
       color: red;
     }
-
+    
     `;
 
     const Chef = styled.div`
@@ -61,8 +61,13 @@ const ChefCards = ({user}) => {
     border-right: gray 1px solid;
     box-shadow: 5px 6px 9px 0px #84949a;
     padding: 2%;
-    width: 20vw;
+    width: 30vw;
     flex-flow: column;
+    @media only screen and (max-width: 600px) {
+      width: 90vw;
+      padding: 0 ;
+    
+    }
   
     `;
   

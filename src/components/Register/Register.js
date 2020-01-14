@@ -21,6 +21,13 @@ function Register({values, errors, touched, status, isSubmitting}) {
     status && newUser(user => [...user, status]);
   }, [status])
 
+  const Error = styled.p`
+  color: red;
+  font-style: italic;
+  font-size: 1vw;
+
+  `;
+
   return (
     <div className="wrap">
         <Form>
@@ -28,11 +35,20 @@ function Register({values, errors, touched, status, isSubmitting}) {
           <img src={logo} alt="chef topia logo" width="100" height="100" />
           <h2>Registration Form</h2>
         </div>
+          <Field type="text" name="username" placeholder="Name" />
+          {touched.username && errors.username && (
+            <Error>{errors.username}</Error>
+          )}
           <Field type="text" name="location" placeholder="Location" />
-          <Field type="text" name="username" placeholder="Username" />
+          {touched.location && errors.location && (
+            <Error>{errors.location} </Error>
+          )}
+          <Field type="text" name="item_photo" placeholder="Add Image Link" />
          
           <Field type="password" name="password" placeholder="Password" />
-         
+          {touched.password && errors.password && (
+            <Error>{errors.password}</Error>
+          )}
           <button type="submit" className="registerSubmit">Submit</button>
         </Form>
     </div>
@@ -40,13 +56,20 @@ function Register({values, errors, touched, status, isSubmitting}) {
 }
 
 const RegistrationForm = withFormik({
-  mapPropsToValues({city, name, password}) {
+  mapPropsToValues({city, name, link, password}) {
     return {
       username: name || "",
       location: city || "",
-      password: password || ""
+      password: password || "",
+      item_photo: link || ""
     };
   },
+
+  validationSchema: Yup.object().shape({
+    username: Yup.string().required('Username is required'),
+    password: Yup.string().required("Password is required"),
+    password: Yup.string().required("Location is required")
+  }),
   
   handleSubmit(values, {setStatus, resetForm}) {
     console.log("Submitting",values);

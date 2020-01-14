@@ -20,6 +20,19 @@ const Recipes = ({recipe}) => {
 
   `;
 
+  const Paragraph = styled.div`
+  width: 60vw;
+  margin: 0 auto;
+  padding: 5% 0;
+  h2{
+    font-size: 3vw;
+  }
+  p{
+    font-size: 1.5vw;
+    line-height: 30px;
+  }
+  `;
+
   const RecipeContainer = styled.div`
     width: 95vw;
     display: flex;
@@ -38,7 +51,17 @@ const Recipes = ({recipe}) => {
   return (
     <div>
     <Header/>
+    <Paragraph>
     <h2>Recipes</h2>
+    <p>
+          Bacon ipsum dolor amet pastrami aliqua in, jowl pariatur lorem short 
+          ribs dolor proident. Esse jerky pastrami meatball incididunt, beef nisi 
+          rump shankle tongue proident swine tri-tip short ribs. Ullamco turducken
+          eiusmod ad, culpa ut meatball dolore cupidatat. T-bone ground round pork 
+          loin sunt. Ipsum tempor exercitation id cillum pancetta ut. Lorem frankfurter 
+          proident pastrami, doner quis shank ullamco.
+    </p>
+    </Paragraph>
     <RecipeContainer>
       {recipe.map(list => (
         <RecipeBlock key={list.id} recipe={list} />

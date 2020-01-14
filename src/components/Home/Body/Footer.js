@@ -1,5 +1,7 @@
 import React from "react";
-import styled from "styled-components"
+import styled from "styled-components";
+import logo from "../../img/cheftopia_logo.png";
+import { Route, Link, NavLink } from "react-router-dom";
 
 
 const Footer = () => {
@@ -10,11 +12,28 @@ const Footer = () => {
       background-position: center;
       background-repeat: no-repeat;
       background-attachment: fixed;
-      height: 350px;
+      height: 250px;
+      margin: 0 auto;
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      a{
+        color: white;
+        padding: 5% 1%;
+        text-decorations: none;
+      }
     `;
     return (
       <Footer>
-        <h2>This is the Footer</h2>
+        <h2>Cheftopia</h2>
+        <div>
+        <div>
+        <a href="https://pensive-meninsky-694a51.netlify.com/" target="_blank">Home</a>
+        <a href="https://pensive-meninsky-694a51.netlify.com/about.html" target="_blank">About Us</a>
+        <Link to="/recipes">Recipes</Link>
+        <Link to="/our-chefs">Our Chefs</Link>
+      </div>
+        </div>
       </Footer>
     );
   };
